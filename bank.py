@@ -1,7 +1,7 @@
 class Bank:
     def __init__(self):
         self.client_details_list = []
-        self.loggedin = False
+        self.loggedIn = False
         self.cash = 100
     
     def register(self, name, ph, password):
@@ -17,6 +17,7 @@ class Bank:
 
         if conditions = True:
             print('Account created successfully')
+            cash = self.cash
             self.client_details_list = [name, ph, password, cash]
             with open(f'{name}.txt', 'w') as f:
                 for details in self.client_details_list:
@@ -28,11 +29,15 @@ class Bank:
             self.client_details_list = details.split('\n')
             if str(ph) in self.client_details_list:
                 if str(password) in self.client_details_list:
-                    self.loggedin = True
+                    self.loggedIn = True
 
-            if self.loggedin == True:
+            if self.loggedIn == True:
                 print(f'{name} is logged in.')
-
+                self.cash = self.client_details_list[3]
+                self.name = name
+            else:
+                print('invalid details!')
+            
                 
             
 
