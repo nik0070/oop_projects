@@ -14,7 +14,7 @@ class Bank:
         if len(str(password)) < 5 or len(str(password)) > 10:
             print('invalid password')
             conditions = False
-
+ 
         if conditions = True:
             print('Account created successfully')
             cash = self.cash
@@ -37,6 +37,21 @@ class Bank:
                 self.name = name
             else:
                 print('invalid details!')
+
+    def add_cash(self, amount):
+        if amount > 0:
+            self.cash += amount
+            with open(f"{name}.txt", "r") as f:
+                details = f.read()
+                self.client_details_list = details.split('\n')
+
+            with open(f"{name}.txt", "w") as f:
+                f.write(details.replace(str(client_details_list[3]), str(self.cash)))
+            print("Amount added")
+        else:
+            print("Enter a valid amount")
+
+        
             
                 
             
