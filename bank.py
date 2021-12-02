@@ -14,7 +14,7 @@ class Bank:
         if len(str(password)) < 5 or len(str(password)) > 10:
             print('invalid password')
             conditions = False
- 
+
         if conditions = True:
             print('Account created successfully')
             cash = self.cash
@@ -51,7 +51,7 @@ class Bank:
         else:
             print("Enter a valid amount")
 
-        
+    
             
                 
             
